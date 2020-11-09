@@ -9,4 +9,4 @@ if (!(Test-Path ./bin/deno.exe)) {
 
 # Runs deno script ininately with executalbe and cache in cwd
 $env:DENO_DIR = "."
-& ./bin/deno run https://raw.githubusercontent.com/beeman/deno-examples/master/apps/hello-world.ts
+& ./bin/deno run https://raw.githubusercontent.com/FanatiQS/portable-deno/hello_world/hello_world.js
