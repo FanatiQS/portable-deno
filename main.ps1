@@ -16,4 +16,4 @@ if (!(Test-Path ./bin/deno.exe)) {
 
 # Runs deno script ininately with executalbe and cache in cwd
 $env:DENO_DIR = "."
-& ./bin/deno run https://raw.githubusercontent.com/denoland/deno/std/0.76.0/std/examples/welcome.ts
+& ./bin/deno.exe run https://raw.githubusercontent.com/denoland/deno/std/0.76.0/std/examples/welcome.ts
