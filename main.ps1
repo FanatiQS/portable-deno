@@ -1,6 +1,13 @@
 # Sets current-working-directory to parent of executed file
 Set-Location $PSScriptRoot
 
+# Updates script url if argument exists
+if ($args[0]) {
+	((Get-Content 'main.ps1' -Raw) -replace "(./bin/deno run )(.*)$", "`$1$($args[0])") | Set-Content -NoNewline 'main2.ps1'
+	((Get-Content 'main' -Raw) -replace "(./bin/deno run )(.*)$", "`$1$($args[0])") | Set-Content -NoNewline 'main'
+	exit
+}
+
 # Downloads deno executable to cwd if it does not exist
 if (!(Test-Path ./bin/deno.exe)) {
 	$env:DENO_INSTALL = "."

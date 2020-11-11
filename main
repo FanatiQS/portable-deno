@@ -4,6 +4,13 @@
 cwd=$(dirname $0)
 cd $cwd
 
+# Updates script url if argument exists
+if [ $# -ne 0 ]; then
+	sed -i "\$s/\(\.\/bin\/deno run \)\(.*\)/\1$1/" main
+	sed -i "\$s/\(\.\/bin\/deno run \)\(.*\)/\1$1/" main.ps1
+	exit 1
+fi
+
 # Downloads deno executable to cwd if it does not exist
 if [ ! -f "./bin/deno" ]; then
 	# DENO_INSTALL needs to be an absolute path since install script changes directory between downloading and unzipping
