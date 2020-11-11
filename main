@@ -6,8 +6,9 @@ cd $cwd
 
 # Updates script url if argument exists
 if [ $# -ne 0 ]; then
-	sed -i "\$s/\(\.\/bin\/deno run \)\(.*\)/\1$1/" main
-	sed -i "\$s/\(\.\/bin\/deno run \)\(.*\)/\1$1/" main.ps1
+	args=$@
+	sed -i "\$s/\(\.\/bin\/deno run \)\(.*\)/\1$args/" main.sh
+	sed -i "\$s/\(\.\/bin\/deno run \)\(.*\)/\1$args/" main.ps1
 	exit 1
 fi
 

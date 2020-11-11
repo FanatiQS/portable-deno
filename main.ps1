@@ -3,8 +3,8 @@ Set-Location $PSScriptRoot
 
 # Updates script url if argument exists
 if ($args[0]) {
-	((Get-Content 'main.ps1' -Raw) -replace "(./bin/deno run )(.*)$", "`$1$($args[0])") | Set-Content -NoNewline 'main2.ps1'
-	((Get-Content 'main' -Raw) -replace "(./bin/deno run )(.*)$", "`$1$($args[0])") | Set-Content -NoNewline 'main'
+	((Get-Content 'main.ps1' -Raw) -replace "(./bin/deno run )(.*)$", "`$1$args") | Set-Content -NoNewline 'main2.ps1'
+	((Get-Content 'main' -Raw) -replace "(./bin/deno run )(.*)$", "`$1$args") | Set-Content -NoNewline 'main'
 	exit
 }
 
