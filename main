@@ -16,5 +16,5 @@ if [ ! -f "./bin/deno" ]; then
 	curl -fsSL https://deno.land/x/install/install.sh | DENO_INSTALL=./ sh
 fi
 
-# Runs deno script ininately with executalbe and cache in cwd
+# Runs deno script initially with executalbe and cache in cwd
 DENO_DIR=./ ./bin/deno run https://raw.githubusercontent.com/denoland/deno/std/0.76.0/std/examples/welcome.ts
