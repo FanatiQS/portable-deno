@@ -8,7 +8,7 @@ if [ $# -ne 0 ]; then
 	args=$@
 	sed -i '' -e "\$s~\(\./bin/deno run \)\(.*\)~\1$args~" main &>/dev/null
 	sed -i '' -e "\$s~\(\./bin/deno run \)\(.*\)~\1$args~" main.ps1 &>/dev/null
-	exit 1
+	exit 0
 fi
 
 # Downloads deno executable to cwd if it does not exist
